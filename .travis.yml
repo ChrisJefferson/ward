@@ -10,3 +10,6 @@ branches:
     - master
 script:
   - ./build.sh
+  - git clone https://www.github.com/gap-system/gap --depth=1
+  - cd gap && ./autogen.sh && ./configure --enable-hpcgap --with-ward=..
+  - echo "QUIT_GAP();" | ./gap
